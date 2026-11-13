@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>田楚怡 · 20岁生日快乐</title>
+<meta name="description" content="田楚怡 20 岁生日快乐 — It's supposed to be fun turning 20.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0705;
+    --bg2:#17100a;
+    --gold:#e8c07a;
+    --gold-deep:#c98f3d;
+    --cream:#f6ead2;
+    --muted:#cbb183;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--cream);
+    font-family:"Noto Serif SC","Songti SC",serif;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  /* ambient glow */
+  .glow{
+    position:fixed;inset:0;pointer-events:none;z-index:0;
+    background:
+      radial-gradient(ellipse 60% 45% at 50% 0%, rgba(255,166,66,.20), transparent 60%),
+      radial-gradient(ellipse 45% 35% at 50% 100%, rgba(190,90,40,.14), transparent 65%),
+      radial-gradient(ellipse 90% 90% at 50% 50%, transparent 55%, rgba(0,0,0,.55) 100%);
+  }
+  #embers{position:fixed;inset:0;pointer-events:none;z-index:1}
+  main{position:relative;z-index:2}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+
+  /* ---------- hero ---------- */
+  header{padding:84px 0 30px;text-align:center}
+  .eyebrow{
+    font-family:"Cormorant Garamond",serif;font-style:italic;
+    letter-spacing:.42em;font-size:15px;color:var(--gold);
+    text-transform:uppercase;text-indent:.42em;
+  }
+  h1{
+    margin-top:18px;font-weight:900;
+    font-size:clamp(56px,11vw,124px);line-height:1.05;letter-spacing:.06em;
+    background:linear-gradient(180deg,#fdf3d8 20%,#eec887 55%,#b97e2e 90%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    text-shadow:0 0 60px rgba(255,180,80,.25);
+  }
+  .big20{
+    font-family:"Cormorant Garamond",serif;font-weight:600;font-style:italic;
+    font-size:clamp(90px,18vw,210px);line-height:.9;margin-top:6px;
+    color:#f9e7bd;
+    text-shadow:0 0 24px rgba(255,190,90,.65),0 0 90px rgba(255,150,50,.35);
+  }
+  .sub{
+    margin-top:22px;font-size:clamp(17px,2.6vw,23px);letter-spacing:.28em;
+    color:#f0dcb4;text-indent:.28em;
+  }
+  .en{
+    margin-top:16px;font-family:"Cormorant Garamond",serif;font-style:italic;
+    font-size:clamp(19px,3vw,27px);color:#d9b47c;letter-spacing:.04em;
+  }
+  .date{
+    margin-top:26px;display:inline-block;padding:9px 22px;
+    border:1px solid rgba(232,192,122,.45);border-radius:999px;
+    font-size:14px;letter-spacing:.22em;color:#e6c795;
+    background:rgba(232,192,122,.07);
+  }
+
+  /* ---------- cake ---------- */
+  .cake{margin:56px auto 0;max-width:920px}
+  .cake figure{
+    position:relative;border-radius:22px;overflow:hidden;
+    box-shadow:0 0 0 1px rgba(232,192,122,.28),0 30px 90px rgba(0,0,0,.75),0 0 120px rgba(255,160,60,.16);
+  }
+  .cake img{display:block;width:100%;height:auto}
+  .cake figcaption{
+    position:absolute;left:0;right:0;bottom:0;padding:34px 22px 18px;text-align:center;
+    font-size:14px;letter-spacing:.3em;color:#f3e2bd;
+    background:linear-gradient(180deg,transparent,rgba(5,3,2,.82));
+  }
+
+  /* ---------- candle ---------- */
+  .wish{text-align:center;padding:88px 0 10px}
+  .candle{position:relative;width:14px;height:120px;margin:0 auto;
+    background:linear-gradient(180deg,#fbf3df,#ecd9ac 70%,#d9bd85);
+    border-radius:7px;box-shadow:0 0 30px rgba(255,190,90,.25)}
+  .candle::after{content:"";position:absolute;left:50%;bottom:-8px;transform:translateX(-50%);
+    width:64px;height:10px;border-radius:50%;background:rgba(0,0,0,.5);filter:blur(3px)}
+  .wick{position:absolute;left:50%;top:-9px;width:2px;height:10px;background:#3a2a18;transform:translateX(-50%)}
+  .flame{
+    position:absolute;left:50%;top:-52px;width:26px;height:46px;transform:translateX(-50%);
+    background:radial-gradient(circle at 50% 78%,#fff7d6 0%,#ffd76a 34%,#ff9d2e 62%,rgba(255,90,20,0) 78%);
+    border-radius:50% 50% 50% 50%/62% 62% 38% 38%;
+    transform-origin:50% 100%;
+    animation:flick 1.15s ease-in-out infinite alternate;
+    filter:drop-shadow(0 0 22px rgba(255,170,60,.9));
+    transition:opacity .6s ease, transform .6s ease;
+  }
+  @keyframes flick{from{transform:translateX(-50%) scale(1) rotate(-2.5deg)}to{transform:translateX(-50%) scale(1.07,1.14) rotate(2.5deg)}}
+  .smoke{
+    position:absolute;left:50%;top:-70px;width:10px;height:64px;transform:translateX(-50%);
+    background:linear-gradient(180deg,rgba(220,220,220,0),rgba(220,220,220,.5),rgba(220,220,220,0));
+    border-radius:50%;filter:blur(4px);opacity:0;pointer-events:none;
+  }
+  .candle.out .flame{opacity:0;transform:translateX(-50%) scale(.4)}
+  .candle.out .smoke{animation:smokeUp 2.2s ease-out forwards}
+  @keyframes smokeUp{0%{opacity:0;transform:translate(-50%,10px)}25%{opacity:.75}100%{opacity:0;transform:translate(-38%,-46px)}}
+  .wish h2{margin-top:30px;font-size:clamp(26px,4.4vw,40px);font-weight:700;letter-spacing:.14em}
+  .wish p{margin-top:14px;color:#cbb183;font-size:16px;line-height:2;letter-spacing:.08em}
+  .wish button{
+    margin-top:30px;cursor:pointer;font-family:inherit;
+    font-size:16px;letter-spacing:.3em;text-indent:.3em;color:#1d1206;
+    padding:15px 40px;border:none;border-radius:999px;
+    background:linear-gradient(180deg,#f6dd9e,#dfa94e);
+    box-shadow:0 10px 34px rgba(255,170,60,.35),inset 0 1px 0 rgba(255,255,255,.7);
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .wish button:hover{transform:translateY(-2px);box-shadow:0 16px 44px rgba(255,170,60,.5),inset 0 1px 0 rgba(255,255,255,.7)}
+  .wish .granted{margin-top:22px;min-height:30px;font-family:"Cormorant Garamond",serif;font-style:italic;
+    font-size:22px;color:var(--gold)}
+
+  /* ---------- polaroid ---------- */
+  .memory{padding:90px 0 30px}
+  .memory h2,.letter h2{font-size:clamp(24px,4vw,34px);font-weight:700;letter-spacing:.2em;text-align:center}
+  .memory .rule,.letter .rule{width:64px;height:2px;margin:18px auto 0;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+  .memory p.lead{text-align:center;margin-top:16px;color:#cbb183;font-size:15px;letter-spacing:.14em}
+  .polaroid{
+    margin:44px auto 0;max-width:520px;padding:16px 16px 58px;background:#f7f1e3;border-radius:6px;
+    transform:rotate(-2.4deg);
+    box-shadow:0 24px 60px rgba(0,0,0,.65),0 0 0 1px rgba(0,0,0,.12);
+    position:relative;
+  }
+  .polaroid::before{content:"";position:absolute;top:-14px;left:50%;transform:translateX(-50%) rotate(-1deg);
+    width:120px;height:30px;background:rgba(240,220,170,.5);border:1px solid rgba(255,255,255,.35)}
+  .polaroid img{display:block;width:100%;height:auto;border-radius:2px}
+  .polaroid figcaption{
+    position:absolute;left:0;right:0;bottom:14px;text-align:center;
+    font-family:"Cormorant Garamond",serif;font-style:italic;font-size:21px;color:#5b4632;letter-spacing:.06em;
+  }
+
+  /* ---------- letter ---------- */
+  .letter{padding:90px 0 30px}
+  .letter .card{
+    max-width:680px;margin:40px auto 0;padding:46px 40px;
+    background:linear-gradient(180deg,rgba(255,240,205,.06),rgba(255,240,205,.02));
+    border:1px solid rgba(232,192,122,.3);border-radius:20px;
+    box-shadow:0 24px 70px rgba(0,0,0,.5);
+  }
+  .letter .card p{font-size:17px;line-height:2.15;letter-spacing:.06em;color:#efe0bd;text-indent:2em}
+  .letter .card p:first-child{text-indent:0}
+  .letter .card p + p{margin-top:16px}
+  .letter .sign{margin-top:28px;text-align:right;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:21px;color:var(--gold)}
+
+  footer{padding:70px 0 60px;text-align:center;color:#a8895c;font-size:13px;letter-spacing:.3em;line-height:2.2}
+  footer .heart{color:#e8a34c}
+
+  /* confetti */
+  .confetti{position:fixed;top:-14px;z-index:5;pointer-events:none;border-radius:2px;
+    animation:fall linear forwards}
+  @keyframes fall{to{transform:translateY(105vh) rotate(720deg);opacity:.85}}
+
+  @media (max-width:640px){
+    header{padding:60px 0 20px}
+    .cake{margin-top:38px}
+    .wish{padding:64px 0 6px}
+    .memory,.letter{padding:64px 0 20px}
+    .letter .card{padding:34px 24px}
+    .polaroid{max-width:86%}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .flame{animation:none}
+    .confetti{display:none}
+  }
+</style>
+</head>
+<body>
+<div class="glow"></div>
+<canvas id="embers"></canvas>
+<main>
+  <div class="wrap">
+
+    <header>
+      <div class="eyebrow">Happy Birthday</div>
+      <h1>田楚怡</h1>
+      <div class="big20">20</div>
+      <div class="sub">二十岁 · 生日快乐</div>
+      <div class="en">It&rsquo;s supposed to be fun turning 20.</div>
+      <div><span class="date">2026 年 11 月 13 日 · 农历丙午年十月初五 · 星期五</span></div>
+    </header>
+
+    <section class="cake">
+      <figure>
+        <img src="cake.jpg" alt="二十岁生日蛋糕，烛光里的 20">
+        <figcaption>今晚的烛光，只为你一个人亮着</figcaption>
+      </figure>
+    </section>
+
+    <section class="wish">
+      <div class="candle" id="candle" role="img" aria-label="生日蜡烛">
+        <div class="flame"></div><div class="wick"></div><div class="smoke"></div>
+      </div>
+      <h2>许个愿吧</h2>
+      <p>闭上眼睛，想一件最想要的事。<br>然后，吹灭这支蜡烛。</p>
+      <button id="blowBtn" type="button">吹灭蜡烛</button>
+      <div class="granted" id="granted"></div>
+    </section>
+
+    <section class="memory">
+      <h2>二十岁的样子</h2>
+      <div class="rule"></div>
+      <p class="lead">拍立得会褪色，今晚不会。</p>
+      <figure class="polaroid">
+        <img src="polaroid.jpg" alt="田楚怡捧着二十岁生日蛋糕的两张拍立得">
+        <figcaption>twenty, and just getting started</figcaption>
+      </figure>
+    </section>
+
+    <section class="letter">
+      <h2>写给二十岁的你</h2>
+      <div class="rule"></div>
+      <div class="card">
+        <p>二十岁到了。不是小孩子了，也还不用急着长大。</p>
+        <p>愿你以后的每一年，都像今晚一样：有蛋糕，有烛光，有人在身边，笑得毫无防备。</p>
+        <p>前路很长，慢慢走，别怕。二十岁的好日子，才刚刚开始。</p>
+        <div class="sign">—— 生日快乐，田楚怡</div>
+      </div>
+    </section>
+
+    <footer>
+      HAPPY 20TH BIRTHDAY <span class="heart">♥</span> 田楚怡<br>
+      2026.11.13 · 农历十月初五
+    </footer>
+
+  </div>
+</main>
+
+<script>
+/* drifting embers */
+(function(){
+  var cv=document.getElementById('embers'),ctx=cv.getContext('2d'),W,H,ps=[];
+  function size(){W=cv.width=innerWidth;H=cv.height=innerHeight}
+  size();addEventListener('resize',size);
+  var N=Math.min(70,Math.floor(innerWidth/18));
+  for(var i=0;i<N;i++)ps.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*2.2+.6,s:Math.random()*.45+.12,o:Math.random()*.55+.2,dx:(Math.random()-.5)*.25,hue:30+Math.random()*22});
+  (function tick(){
+    ctx.clearRect(0,0,W,H);
+    for(var i=0;i<ps.length;i++){var p=ps[i];
+      p.y-=p.s;p.x+=p.dx+Math.sin((p.y+p.r*40)/60)*.18;
+      if(p.y<-8){p.y=H+8;p.x=Math.random()*W}
+      var a=p.o*(0.65+0.35*Math.sin(Date.now()/700+p.r*9));
+      ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,7);
+      ctx.fillStyle='hsla('+p.hue+',95%,64%,'+a+')';
+      ctx.shadowColor='rgba(255,160,50,.9)';ctx.shadowBlur=8;ctx.fill();
+    }
+    requestAnimationFrame(tick);
+  })();
+})();
+
+/* blow out the candle + confetti */
+(function(){
+  var candle=document.getElementById('candle'),
+      btn=document.getElementById('blowBtn'),
+      msg=document.getElementById('granted'),lit=true;
+  var colors=['#f6dd9e','#e8a34c','#ff8a5c','#f3e2bd','#d96a4f','#fff3d0'];
+  function confetti(n){
+    for(var i=0;i<n;i++){
+      var d=document.createElement('div');d.className='confetti';
+      var s=6+Math.random()*8;
+      d.style.left=Math.random()*100+'vw';
+      d.style.width=s+'px';d.style.height=(s*.55)+'px';
+      d.style.background=colors[i%colors.length];
+      d.style.animationDuration=(2.2+Math.random()*1.8)+'s';
+      d.style.animationDelay=(Math.random()*.5)+'s';
+      document.body.appendChild(d);
+      setTimeout((function(el){return function(){el.remove()}})(d),4800);
+    }
+  }
+  btn.addEventListener('click',function(){
+    if(lit){candle.classList.add('out');lit=false;
+      btn.textContent='再点亮它';
+      msg.textContent='愿望已经许下啦 ✨';
+      confetti(90);
+    }else{candle.classList.remove('out');lit=true;
+      btn.textContent='吹灭蜡烛';
+      msg.textContent='';
+    }
+  });
+})();
+</script>
+</body>
+</html>
